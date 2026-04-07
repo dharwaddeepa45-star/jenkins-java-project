@@ -1,79 +1,84 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
-    
+
     <groupId>in.RAHAM</groupId>
     <artifactId>NETFLIX</artifactId>
-    <packaging>war</packaging>
     <version>1.2.2</version>
+    <packaging>war</packaging>
+
     <name>Java Home myweb</name>
     <url>http://maven.apache.org</url>
-    
+
+    <!-- ✅ Java version fixed -->
     <properties>
-        <!-- Specify Java version -->
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <docker.image.prefix>kammana</docker.image.prefix>
-    </properties>    
-    
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- ✅ Clean dependencies -->
     <dependencies>
-        <dependency>
-            <groupId>com.oracle.bedrock</groupId>
-            <artifactId>bedrock-runtime-maven</artifactId>
-            <version>5.1.2</version>
-        </dependency>
-        
+
+        <!-- Updated JUnit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
-    
+
+    <!-- ✅ Nexus repo (kept as is) -->
     <distributionManagement>
         <snapshotRepository>
             <id>nexusRepo</id>
             <url>http://13.233.230.166:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
-        
+
         <repository>
             <id>nexusRepo</id>
             <url>http://13.233.230.166:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
-    
-    <pluginRepositories>
-        <pluginRepository>    
-            <id>maven1</id>
-            <name>Maven.org</name>
-            <url>http://repo1.maven.org/maven2</url>
-        </pluginRepository>
-    </pluginRepositories>
+
+    <!-- ✅ FIXED HTTPS repo -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo1.maven.org/maven2</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
-            <!-- Updated Maven Compiler Plugin -->
+
+            <!-- ✅ Compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <!-- Use Java 11 for source and target -->
-                    <source>11</source>
-                    <target>11</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 
-            <!-- Updated Maven War Plugin -->
+            <!-- ✅ WAR plugin FIX -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.1</version> <!-- Updated version -->
+                <version>3.3.2</version>
                 <configuration>
-                    <!-- You can add custom configurations if needed -->
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
+
 </project>
