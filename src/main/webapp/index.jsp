@@ -28,7 +28,7 @@
         <div class="form-help">
           <div class="remember-me">
             <input type="checkbox" id="remember-me" />
-            <label for="remember-me">Remember meeeeeee</label>
+            <label for="remember-me">Remember me</label>
           </div>
           <a href="#">Need help?</a>
         </div>
