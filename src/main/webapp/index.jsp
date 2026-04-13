@@ -22,7 +22,7 @@
         </div>
         <div class="form-control">
           <input type="password" required />
-          <label>Password</label>
+          <label>Passwordddddd</label>
         </div>
         <button type="submit"> LOGIN  </button>
         <div class="form-help">
