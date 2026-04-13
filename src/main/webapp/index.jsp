@@ -14,11 +14,11 @@
     </nav>
     <div class="background-image"></div>
     <div class="form-wrapper">
-      <h2> deepa netflic.</h2>
+      <h2> Welcome to Netflix.</h2>
       <form action="#">
         <div class="form-control">
           <input type="text" required />
-          <label>EmaillLL</label>
+          <label>Email</label>
         </div>
         <div class="form-control">
           <input type="password" required />
